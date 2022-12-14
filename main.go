@@ -6,7 +6,6 @@ import (
 	"os"
 	"rein/tugas16/controllers"
 	"rein/tugas16/database"
-	"strconv"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
@@ -38,7 +37,6 @@ func main() {
 		fmt.Println("loaded config")
 	}
 	//psqlInfo := fmt.Sprintf("host=#{os.Getenv("DB_HOST")} port=#{os.Getenv("DB_PORT")} dbname=#{os.Getenv("DB_NAME")} user=#{os.Getenv("DB_USER")} password=#{os.Getenv("DB_PASSWORD")} sslmode=disable")
-	port, _ := strconv.Atoi(os.Getenv("DB_PORT"))
 	psqlInfo := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
 		os.Getenv("PGHOST"),
 		os.Getenv("PGPORT"),
